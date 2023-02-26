@@ -1,4 +1,4 @@
-package sandbox.exercise.printable
+package sandbox.exercise.typeclass
 
 object PrintableDemo extends App {
   val daisy = Cat("Daisy", 2, "white")
