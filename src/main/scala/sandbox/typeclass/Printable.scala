@@ -1,12 +1,30 @@
 package sandbox.typeclass
 
-trait Printable[A] {
+trait Printable[A] { self =>
+
   def format(value: A): String
+
+  def contramap[B](func: B => A): Printable[B] =
+    new Printable[B] {
+       def format(value: B): String = self.format(func(value))
+    }
 }
 
 object PrintableInstances {
-  implicit val stringPrintable: Printable[String] = (a: String) => a
-  implicit val intPrintable: Printable[Int] = (a: Int) => a.toString
+  implicit val intPrintable: Printable[Int] =
+    new Printable[Int] {
+      def format(value: Int): String = value.toString
+    }
+  implicit val stringPrintable: Printable[String] =
+    new Printable[String] {
+      def format(value: String): String =
+        s"'${value}'"
+    }
+  implicit val booleanPrintable: Printable[Boolean] =
+    new Printable[Boolean] {
+      def format(value: Boolean): String =
+        if  (value) "yes" else "no"
+    }
 }
 
 object Printable {

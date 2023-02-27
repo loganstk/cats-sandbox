@@ -1,13 +1,14 @@
-package sandbox.typeclass
+package sandbox.typeclass.example
 
-import cats.{Eq, Show}
 import cats.implicits._
+import cats.{Eq, Show}
+import sandbox.typeclass.Printable
 
 final case class Cat(name: String, age: Int, color: String)
 
 object Cat {
-  implicit val catPrintable = new Printable[Cat] {
-    override def format(c: Cat): String =
+  implicit val catPrintable: Printable[Cat] = new Printable[Cat] {
+    def format(c: Cat): String =
       s"${c.name} is a ${c.age} year-old ${c.color} cat."
   }
 

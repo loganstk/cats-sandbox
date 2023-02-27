@@ -1,4 +1,4 @@
-package sandbox.typeclass
+package sandbox.typeclass.example
 
 import cats.implicits.catsSyntaxEq
 
