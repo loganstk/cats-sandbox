@@ -1,4 +1,4 @@
-package sandbox.exercise.semigroup
+package sandbox.semigroup
 
 trait Semigroup[A] {
   def combine(x: A, y: A): A

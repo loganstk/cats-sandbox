@@ -1,4 +1,4 @@
-package sandbox.exercise.monoid
+package sandbox.monoid
 
 object BooleanMonoids {
   implicit val andMonoid: Monoid[Boolean] = new Monoid[Boolean] {

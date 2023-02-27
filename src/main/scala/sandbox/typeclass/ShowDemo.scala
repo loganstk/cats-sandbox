@@ -1,4 +1,4 @@
-package sandbox.exercise.typeclass
+package sandbox.typeclass
 
 object ShowDemo extends App {
   import cats.implicits._

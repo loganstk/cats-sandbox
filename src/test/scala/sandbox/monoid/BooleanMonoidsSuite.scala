@@ -1,4 +1,4 @@
-package sandbox.exercise.monoid
+package sandbox.monoid
 
 import org.scalacheck.Properties
 

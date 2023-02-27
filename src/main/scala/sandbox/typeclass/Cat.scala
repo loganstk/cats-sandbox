@@ -1,4 +1,4 @@
-package sandbox.exercise.typeclass
+package sandbox.typeclass
 
 import cats.{Eq, Show}
 import cats.implicits._
